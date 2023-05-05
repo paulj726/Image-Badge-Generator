@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Overlay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container {
+            position: relative;
+            display: inline-block;
+            width: 560px;
+            overflow: hidden;
+        }
+
+        .container img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .circle {
+            position: absolute;
+            top: 9%; /* Relative positioning */
+            left: 7%; /* Relative positioning */
+            width: 33%; /* Relative sizing */
+            height: 0; /* Relative sizing */
+            border-radius: 50%;
+            background-color: #3D4A3C;
+            box-shadow: 5px 5px 8px 1px rgba(0, 0, 0, 0.3);
+            padding-bottom: 33%; /* Relative sizing */
+            overflow: hidden;
+        }
+
+        .circle-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Ringside Compressed', 'Montserrat', 'Arial', 'Helvetica', sans-serif;
+            font-weight: 400; /* Semibold weight */
+            color: white;
+      
+            letter-spacing: 2.8px;
+            text-align: center;
+        }
+
+        .extra-row {
+ display: flex;
+    justify-content: center;
+    margin-bottom: -10px;
+    align-items: center;
+
+        }
+
+
+        .line-1 {
+            font-size: 9em;
+            margin-bottom: 2px;
+margin-top: 30px;
+color: #EFEFEF;
+        }
+.line-2-a {
+
+            margin-bottom: 5px;
+            line-height: 0.9;
+display: flex;
+    flex-direction: column;
+    font-size: 6em;
+    margin-right: 0.2em;
+   margin-top: 0.6em;
+margin-left: 20px;
+color: #EFEFEF;
+font-weight: 600;
+text-align: right;
+
+
+        }
+.line-2-b {
+           
+            margin-bottom: 5px;
+ line-height: 0.8;
+margin-left: 0em;
+margin-right: 10px;
+color: #EFEFEF;
+ font-family: 'EB Garamond', 'Montserrat', 'Arial', 'Helvetica', sans-serif;
+            letter-spacing: 1px;
+font-size: 30em;
+    align-items: center;
+font-weight: 600;
+
+        }
+.line-2-c {
+           
+            margin-bottom: 5px;
+ line-height: 0.8;
+margin-left: -0.2em;
+margin-right: 20px;
+margin-top: 1px;
+color: #EFEFEF;
+ font-family: 'EB Garamond', 'Montserrat', 'Arial', 'Helvetica', sans-serif;
+            letter-spacing: 1px;
+font-size: 10em;
+   align-items: baseline;
+text-align: left;
+font-weight: 600;
+
+        }
+
+
+        .line-3 {
+            font-size: 7em;
+            margin-bottom: 5px;
+margin-top: 10px;
+color: #EFEFEF;
+font-weight: 600;
+
+        }
+
+        .line-4 {
+            font-size: 6em;
+color: #CD713C;
+        }
+.code {
+            font-size: 1em;
+color: #CD713C;
+        }
+    </style>
+    <script>
+        function adjustFontSize() {
+            const circleContent = document.querySelector('.circle-content');
+            const textLength = circleContent.textContent.length;
+            const circleWidth = document.querySelector('.circle').clientWidth;
+            const lines = circleContent.innerHTML.split('<br>').length;
+
+            // Adjust the font size based on the circle width, the text length, and the number of lines
+            const fontSize = (circleWidth * 0.8 / textLength) * (lines === 3 ? 3.5 : 1.5);
+            circleContent.style.fontSize = `${fontSize}px`;
+        }
+
+        document.addEventListener('DOMContentLoaded', adjustFontSize);
+    </script>
+</head>
+<body>
+<div class="container">
+    <img src="https://d3k81ch9hvuctc.cloudfront.net/company/QnZWdn/images/b9c61034-7a52-4d34-91ba-6775428c11cd.jpeg" alt="Sample Image">
+    <div class="circle">
+        <div class="circle-content">
+            <span class="line-1">ENDS SUNDAY</span>
+            <div class="extra-row">
+                <div class="line-2-a">
+                    <span>TAKE</span>
+                    <span>AN</span>
+                    <span>EXTRA</span>
+                </div>
+                <span class="line-2-b">25</span><span class="line-2-c">%<br>Off</span></span>
+            </div>
+            <span class="line-3">CLEARANCE ITEMS</span>
+            <span class="line-4">WITH CODE <br><span class="code">EXTRA25</span></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
