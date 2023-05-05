@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Circle Badge Generator</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+  </head>
+  <body>
+    <form action="/" method="post">
+      <h1>Circle Badge Generator</h1>
+      <div class="input-field">
+        <label for="text">Text</label>
+        <input type="text" id="text" name="text" required>
+      </div>
+      <div class="input-field">
+        <label for="font-style">Font Style</label>
+        <select name="font_style" id="font-style">
+          <option value="fonts/Roboto-Bold.ttf">Bold</option>
+          <option value="fonts/Roboto-Regular.ttf">Regular</option>
+          <option value="fonts/Roboto-Light.ttf">Light</option>
+        </select>
+      </div>
+      <div class="input-field">
+        <label for="font-size">Font Size (px)</label>
+        <input type="number" id="font-size" name="font_size" min="10" max="500" step="1" value="80" required>
+      </div>
+      <div class="input-field">
+        <label for="color">Color</label>
+        <input type="color" id="color" name="color" value="#FFFFFF" required>
+      </div>
+      <div class="input-field">
+        <label for="style">Style</label>
+        <select name="style" id="style">
+          <option value="normal">Normal</option>
+          <option value="embossed">Embossed</option>
+        </select>
+      </div>
+      <button type="submit">Generate Badge</button>
+    </form>
+  </body>
+</html>

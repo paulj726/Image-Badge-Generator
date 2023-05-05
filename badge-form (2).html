@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Circle Badge Generator</title>
+    <style>
+        body {
+            background-color: #F8F8FF;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        form {
+            background-color: #FFF;
+            border: 1px solid #CCC;
+            padding: 15px;
+            width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 5px 5px 25px #555;
+        }
+        input[type=text], input[type=color], select {
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type=checkbox] {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            margin-left: 18px;
+        }
+        input[type=submit] {
+            background-color: #008CBA;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <form action="/badge" method="POST">
+        <label for="size_input">Badge Size (px):</label>
+        <input type="text" id="size_input" name="size_input" value="100"><br>
+        <label for="color_input">Badge Color:</label>
+        <input type="color" id="color_input" name="color_input" value="#FF0000"><br>
+        <label for="font_input">Font (leave blank for default):</label>
+        <input type="text" id="font_input" name="font_input"><br>
+        <label for="font_size_input">Font Size (pt):</label>
+        <input type="text" id="font_size_input" name="font_size_input" value="24"><br>
+        <label for="font_style_input">Font Style:</label>
+        <select id="font_style_input" name="font_style_input">
+          <option value="normal">Normal</option>
+          <option value="bold">Bold</option>
+          <option value="italic">Italic</option>
+        </select><br>
+        <label for="text_input">Badge Text:</label>
+        <input type="text" id="text_input" name="text_input"><br>
+        <label for="embossed_input">Embossed Style:</label>
+        <input type="checkbox" id="embossed_input" name="embossed_input"><br><br>
+        <input type="submit" value="Generate Badge">
+    </form>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Badge Generator</title>
+  <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+
+  <form action="/generate" method="post">
+    <div class="preview-area">
+      <div class="badge {% if emboss %}emboss{% endif %}" style="background-color: {{bgcolor}}; color: {{txtcolor}}; font-size: {{txtsize}}rem; font-family: {{font}};">
+        {% if emboss %}<div class="top-left">{{txt}}</div><div class="bottom-right">{{txt}}</div>{% else %}{{txt}}{% endif %}
+      </div>
+    </div>
+    <label for="txtinput">Text:</label>
+    <input type="text" name="txtinput" id="txtinput" value="{{txt}}"><br>
+    <label for="txtsize">Size:</label>
+    <input type="number" name="txtsize" id="txtsize" min="1" max="10" value="{{txtsize}}"><br>
+    <label for="bgcolor">Color:</label>
+    <input type="color" name="bgcolor" id="bgcolor" value="{{bgcolor}}"><br>
+    <label for="txtcolor">Text Color:</label>
+    <input type="color" name="txtcolor" id="txtcolor" value="{{txtcolor}}"><br>
+    <label for="font">Font:</label>
+    <select name="font" id="font">
+      <option value="Open Sans" {% if font == 'Open Sans' %}selected{% endif %}>Open Sans</option>
+      <option value="Arial" {% if font == 'Arial' %}selected{% endif %}>Arial</option>
+      <option value="Helvetica" {% if font == 'Helvetica' %}selected{% endif %}>Helvetica</option>
+      <option value="Times New Roman" {% if font == 'Times New Roman' %}selected{% endif %}>Times New Roman</option>
+      <option value="Courier New" {% if font == 'Courier New' %}selected{% endif %}>Courier New</option>
+    </select><br>
+    <label for="emboss">Use Embossed Style:</label>
+    <input type="checkbox" name="emboss" id="emboss" {% if emboss %}checked{% endif %}><br>
+    <input type="submit" value="GENERATE BADGE">
+  </form>
+
+</body>
+
+</html>
